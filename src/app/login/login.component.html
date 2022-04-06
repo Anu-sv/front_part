@@ -1,0 +1,17 @@
+
+<!-- Default form login -->
+<form class="text-center border border-light p-5" (ngSubmit)="userLogin()" >
+    <p class="h4 mb-4">Login</p>
+    <!-- Email -->
+    <input type="text" id="userId" name="userId" class="form-control mb-4"
+    [(ngModel)]="user.userId" placeholder="username">
+    <!-- Password -->
+    <input type="password" id="password" name="password" class="form-control mb-4" 
+    [(ngModel)]="user.password" placeholder="Password">
+     
+    <button mdbBtn color="info"  class="my-4" type="submit" >Sign in</button><!--(click)="onSubmit()"-->
+    
+    
+  </form>
+  <!-- Default form login -->
+  

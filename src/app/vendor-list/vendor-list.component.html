@@ -1,0 +1,90 @@
+
+<div *ngIf="showVenForm">
+  <button  (click)="showLapTopForm()">Add Vendor</button>
+</div>
+<div *ngIf="showVenFormtoAdd">
+  <form (ngSubmit)="submitVendorForm()" class="container">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to Add LapTop.</p>
+      <hr>
+    
+      <label for="vendor_name"><b>Vendor Name</b></label>
+      <input type="text" placeholder="Vendor Name" name="vendor_name" id="module_name" required [(ngModel)]="vendor.vendor_name">
+     
+      <label for="rating"><b>Rating</b></label>
+      <input type="text" placeholder="Rating" name="rating" id="rating" required [(ngModel)]="vendor.rating">
+      <br>
+      <label for="contact_number">Contact Number</label>
+      <input type="text" placeholder="Contact Number" name="contact_number" id="ram" required [(ngModel)]="vendor.contact_number">
+
+      <label for="harddrive_size"><b>Address</b></label>
+      <input type="text" placeholder="Address" name="address" id="address" required [(ngModel)]="vendor.address">
+      <br>
+
+      
+      <button type="submit" class="registerbtn">Submit To Add</button>
+      <br>
+    </div>
+    
+   
+  </form>
+</div>
+<br>
+
+
+
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Vendor Name</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Address</th>
+          <th scope="col">Contact No</th>
+          <th *ngIf="showVenForm" scope="col">Delete</th>
+          <th  *ngIf="showVenForm" scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let vendor of vendors">
+            <td>{{vendor.id}}</td>
+          <td>{{vendor.vendor_name}}</td>
+          <td>{{vendor.rating}}</td>
+          <td>{{vendor.address}}</td>
+          <td>{{vendor.contact_number}}</td>
+         <td *ngIf="showVenForm"> <button (click)="delete(vendor.id)">Delete</button>  </td>
+          <td *ngIf="showVenForm"><button (click)="edit(vendor.id)">Edit</button></td>  
+        </tr>
+      
+      </tbody>
+  </table>
+<!--
+<form>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Vendor Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="vendorname">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Rating</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="rating">
+      </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Addrees</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="address">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Contact No</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="contactno">
+        </div>
+      </div>
+</form>
+-->

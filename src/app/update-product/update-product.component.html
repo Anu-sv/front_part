@@ -1,0 +1,33 @@
+<p>update-product works!</p>
+
+<div>
+    <form (ngSubmit)="submitProductUpdateForm()" class="container">
+      <div class="container">
+        
+        <label for="model_name"><b>Module Name</b></label>
+        <input type="text" placeholder="Module Name" name="model_name" id="module_name" required [(ngModel)]="product.model_name">
+       
+        <label for="os"><b>OS Name</b></label>
+        <input type="text" placeholder="OS Name" name="os" id="os" required [(ngModel)]="product.os">
+        <br>
+        <label for="ram"><b>RAM Size</b></label>
+        <input type="text" placeholder="RAM Size" name="ram" id="ram" required [(ngModel)]="product.ram">
+  
+        <label for="harddrive_size"><b>RAM Size</b></label>
+        <input type="text" placeholder="HardDrive Size" name="harddrive_size" id="harddrive_size" required [(ngModel)]="product.harddrive_size">
+        <br>
+  
+        <label for="stack_available"><b>Stock Available</b></label>
+        <input type="number" placeholder="stock available" name="stack_available" id="stack_available" required [(ngModel)]="product.stack_available">
+  
+        <label for="vendor_name"><b>vendor</b></label>
+       <select [(ngModel)]="product.vendorID" name="vendorID">
+         <option *ngFor="let ven of vendors" [ngValue]="ven.id">{{ven.vendor_name}}</option>
+       </select>
+        <button type="submit" class="registerbtn">Submit To Add</button>
+        <br>
+      </div>
+      
+     
+    </form>
+  </div>

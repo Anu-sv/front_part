@@ -1,0 +1,29 @@
+<p>update-vender works!</p>
+<div >
+    <form (ngSubmit)="submitVendorUpdateForm()" class="container">
+      <div class="container">
+    
+      
+        <label for="vendor_name"><b>Vendor Name</b></label>
+        <input type="text" placeholder="Vendor Name" name="vendor_name" id="module_name" required [(ngModel)]="vendor.vendor_name">
+       
+        <label for="rating"><b>Rating</b></label>
+        <input type="text" placeholder="Rating" name="rating" id="rating" required [(ngModel)]="vendor.rating">
+        <br>
+        <label for="contact_number">Contact Number</label>
+        <input type="text" placeholder="Contact Number" name="contact_number" id="ram" required [(ngModel)]="vendor.contact_number">
+  
+        <label for="harddrive_size"><b>Address</b></label>
+        <input type="text" placeholder="Address" name="address" id="address" required [(ngModel)]="vendor.address">
+        <br>
+  
+        
+        <button type="submit" class="registerbtn">Update</button>
+        <br>
+      </div>
+      
+     
+    </form>
+  </div>
+  <br>
+  
